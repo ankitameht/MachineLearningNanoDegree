@@ -6979,9 +6979,18 @@ Once you have performed this implementation, the dataset will be stored in the v
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong><br>
-Yes, Data points [128, 154, 65, 66, 75] have outliers in more than one features. These datapoints should be removed since these are more likely to be cause errors while predicting than others .</p>
-<p>We want to keep the data points in which there is outlier in one feature, since this will help maintain the consistency in the data and removing these might lead to overfitting.</p>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>Yes, Data points [128, 154, 65, 66, 75] have outliers in more than one features. </li>
+<li>As k-means can be quite sensitive to outliers due its property to optimize the sum of squares. i.e. a large deviation (such as of an outlier) gets a lot of weight. Hence, These datapoints should be removed since these are more likely to be cause errors while predicting than others.</li>
+<li>We want to keep the data points in which there is outlier in one feature, since this will help maintain the consistency in the data and removing these might lead to overfitting.</li>
+</ul>
+<hr>
+<p><strong>Reference:</strong></p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/13989419/removing-outliers-from-a-k-mean-cluster">http://stackoverflow.com/questions/13989419/removing-outliers-from-a-k-mean-cluster</a></li>
+</ul>
+<hr>
 
 </div>
 </div>
@@ -7432,10 +7441,10 @@ p4aRiIiIiIgEPTWMREREREQk6KlhJCIiIiIiQU8NIxERERERCXpqGImIiIiISNBTw0hERERERILe
 </ul>
 <hr>
 <ul>
-<li>Dimension 1 : Best represents Milk, Grocery and Detergents_Paper. This seems to represent convinient stores.</li>
-<li>Dimension 2 : Best represents Fresh, Frozen and Delicatessen. This seems to represent restraunts.</li>
-<li>Dimension 3 : Best represents Frozen and Delicatessen. This might represent supermarkets.</li>
-<li>Dimension 4 : Best represents Frozen and Detergents_Paper and there is a high decrease in value for Fresh and Delicatessen. This might seperate out estabilishments where fast food maybe served.</li>
+<li>Dimension 1 : The first principal component is made up of large positive weights in Detergents_Paper, Grocery &amp; Milk. It also correlates with a decrease in Fresh and Frozen. This pattern might represent spending in household staples products that are purchased together.</li>
+<li>Dimension 2 : The second principal component is made up of large positive weights in Fresh, Frozen &amp; Delicatessen. It also correlates with a smaller positive weights in Milk, Grocery and Detergents_Paper. This pattern might represent spending in Restraunts/Cafes/Hotels products.</li>
+<li>Dimension 3 : The third principal component is made up of large positive weights in Frozen &amp; Delicatessen. It also correlates with a large negative weights in Fresh Products. This pattern might represent spending for Supermarkets.</li>
+<li>Dimension 4 : The fourth principal component is made up of very high positive weights in Frozen, which correlates with a large negative weights in Delicatessen Products. This pattern might represent spending in clearly represents spending for a fast food establishment.</li>
 </ul>
 <hr>
 
